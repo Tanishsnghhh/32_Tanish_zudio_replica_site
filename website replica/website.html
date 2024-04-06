@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Zudio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="//www.zudio.com/cdn/shop/t/69/assets/theme.scss.css?v=106023543483868648021706509645" rel="stylesheet">
+    <link href="//www.zudio.com/cdn/shop/t/69/assets/mobile-menu.css?v=132184978344864835021706508611" rel="stylesheet">
+    <link href="//www.zudio.com/cdn/shop/t/69/assets/custom-styles.scss.css?v=132412028702862868741706508611"
+        rel="stylesheet">
+
+    <style data-shopify>
+        /* Your Shopify specific CSS here */
+    </style>
+</head>
+
+<body class="template-index nav-on-left">
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">Skip to content</a>
+
+    <div id="SearchDrawer" class="search-bar drawer drawer--top" role="dialog" aria-modal="true" aria-label="Search">
+        <div class="search-bar__table">
+            <div class="search-bar__table-cell search-bar__form-wrapper">
+                <form class="search search-bar__form" action="/search" method="get" role="search">
+                    <input class="search__input search-bar__input" type="search" name="q" value="" placeholder="Search"
+                        aria-label="Search">
+                    <button class="search-bar__submit search__submit btn--link" type="submit">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search"
+                            viewBox="0 0 37 40">
+                            <!-- SVG path for search icon -->
+                        </svg>
+                        <span class="icon__fallback-text">Submit</span>
+                    </button>
+                </form>
+            </div>
+            <div class="search-bar__table-cell text-right">
+                <button type="button" class="btn--link search-bar__close js-drawer-close">
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close"
+                        viewBox="0 0 40 40">
+                        <!-- SVG path for close icon -->
+                    </svg>
+                    <span class="icon__fallback-text">Close search</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var theme = {
+            strings: {
+                addToCart: "Add to cart",
+                soldOut: "Sold out",
+                unavailable: "Unavailable",
+                regularPrice: "Regular price",
+                sale: "Sale",
+                showMore: "Show More",
+                showLess: "Show Less",
+                addressError: "Error looking up that address",
+                addressNoResults: "No results for that address",
+                addressQueryLimit: "You have exceeded the Google API usage limit. Consider upgrading to a Premium Plan.",
+                authError: "There was a problem authenticating your Google Maps account.",
+                newWindow: "Opens a new window.",
+                external: "Opens external website.",
+                newWindowExternal: "Opens external website in a new window.",
+                quantityMinimumMessage: "Quantity must be 1 or more",
+                unitPrice: "Unit price",
+                unitPriceSeparator: "per",
+                oneCartCount: "1 item",
+                otherCartCount: "[count] items",
+                quantityLabel: "Quantity: [count]"
+            },
+            moneyFormat: "<sup>&#x20B9;</sup> {{ amount_no_decimals }}"
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="//www.zudio.com/cdn/shop/t/69/assets/lazysizes.js?v=94224023136283657951706508611" async></script>
+    <script src="//www.zudio.com/cdn/shop/t/69/assets/vendor.js?v=12001839194546984181706508611" defer></script>
+    <script src="//www.zudio.com/cdn/shop/t/69/assets/theme.js?v=122149096453430030721706508611" defer></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" async></script>
+
+    <meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/24941559894/digital_wallets/dialog">
+    <script async src="/checkouts/internal/preloads.js?locale=en-IN"></script>
+    <script async src="https://shop.app/checkouts/internal/preloads.js?locale=en-IN&shop_id=24941559894"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+</style>
+<div class="cart-popup-wrapper cart-popup-wrapper--hidden" role="dialog" aria-modal="true"
+    aria-labelledby="CartPopupHeading" data-cart-popup-wrapper>
+    <div class="cart-popup" data-cart-popup tabindex="-1">
+        <h2 id="CartPopupHeading" class="cart-popup__heading">Just added to your cart</h2>
+        <button class="cart-popup__close" aria-label="Close" data-cart-popup-close><svg aria-hidden="true"
+                focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 40 40">
+                <path
+                    d="M23.868 20.015L39.117 4.78c1.11-1.108 1.11-2.77 0-3.877-1.109-1.108-2.773-1.108-3.882 0L19.986 16.137 4.737.904C3.628-.204 1.965-.204.856.904c-1.11 1.108-1.11 2.77 0 3.877l15.249 15.234L.855 35.248c-1.108 1.108-1.108 2.77 0 3.877.555.554 1.248.831 1.942.831s1.386-.277 1.94-.83l15.25-15.234 15.248 15.233c.555.554 1.248.831 1.941.831s1.387-.277 1.941-.83c1.11-1.109 1.11-2.77 0-3.878L23.868 20.015z"
+                    class="layer" />
+            </svg></button>
+
+        <div class="cart-popup-item">
+            <div class="cart-popup-item__image-wrapper hide" data-cart-popup-image-wrapper>
+                <div class="cart-popup-item__image-placeholder" data-cart-popup-image-placeholder>
+                    <div class="placeholder-background placeholder-background--animation"></div>
+                </div>
+            </div>
+            <div class="cart-popup-item__description">
+                <div>
+                    <div class="cart-popup-item__title" data-cart-popup-title></div>
+                    <ul class="product-details" aria-label="Product details" data-cart-popup-product-details></ul>
+                </div>
+                <div class="cart-popup-item__quantity">
+                    <span class="visually-hidden" data-cart-popup-quantity-label></span>
+                    <span aria-hidden="true">Qty:</span>
+                    <span aria-hidden="true" data-cart-popup-quantity></span>
+                </div>
+            </div>
+        </div>
+
+        <a href="/cart" class="cart-popup__cta-link btn btn--secondary-accent">
+            View cart (<span data-cart-popup-cart-quantity></span>)
+        </a>
+        </button>
+    </div>
+</div>
+</div>
+<div id="shopify-section-header" class="shopify-section">
+
+    <div data-section-id="header" data-section-type="header-section">
+
+
+        <header class="site-header logo--left" role="banner">
+            <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+                <ul class="cd-header-buttons">
+                    <li><a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a></li>
+                </ul> <!-- cd-header-buttons -->
+
+                <nav class="cd-nav">
+                    <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+                        <li class="closeMenu"><span></span></li>
+
+                        <li>
+                            <a href="#">Collection</a>
+
+                        </li>
+
+                        <li>
+                            <a href="/pages/zudio">#Zudio</a>
+
+                        </li>
+
+                        <li>
+                            <a href="/pages/whats-new">What&#39;s new</a>
+
+                        </li>
+
+                        <li>
+                            <a href="https://www.zudio.com/apps/s/storelocators?type=Zudio">Zudio near you</a>
+
+                        </li>
+
+                        <li>
+                            <a href="/pages/z-world">Z World</a>
+
+                        </li>
+
+                    </ul> <!-- primary-nav -->
+                </nav> <!-- cd-nav -->
+
+
+                <div class="grid__item medium-up--one-quarter logo-align--left">
+                    <h1 class="h2 site-header__logo">
+                        <a href="/" class="site-header__logo-image">
+
+                            <img class="lazyload js" src="//www.zudio.com/cdn/shop/files/logo_300x300.png?v=1613519896"
+                                data-aspectratio="5.045454545454546" data-sizes="auto" alt="Zudio"
+                                style="max-width: 220px">
+                            <noscript>
+
+                                <a href="website.html" class="mobile-nav__link">
+                                    alt="Zudio" style="max-width: 220px;">
+                            </noscript>
+                        </a>
+                    </h1>
+                </div>
+
+
+                <nav class="grid__item medium-up--three-quarters small--hide" id="AccessibleNav" role="navigation">
+                    <ul class="site-nav list--inline " id="SiteNav">
+
+                        <li>
+                            <a href="https://www.zudio.com/pages/zudio" class="site-nav__link site-nav__link--main">
+                                <span class="site-nav__label">#Zudio</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.zudio.com/apps/s/storelocators?type=Zudio"
+                                class="site-nav__link site-nav__link--main">
+                                <span class="site-nav__label">Zudio near you</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/pages/z-world" class="site-nav__link site-nav__link--main">
+                                <span class="site-nav__label">Z World</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="mobile-nav-wrapper medium-up--hide" role="navigation">
+                <ul id="MobileNav" class="mobile-nav">
+
+                    <li class="mobile-nav__item border-bottom">
+
+                        <a href="https://www.zudio.com/apps/s/storelocators?type=Zudio" class="mobile-nav__link">
+                            <span class="mobile-nav__label">Zudio near you</span>
+                        </a>
+
+                    </li>
+
+                    <li class="mobile-nav__item">
+
+                        <a href="/pages/z-world" class="mobile-nav__link">
+                            <span class="mobile-nav__label">Z World</span>
+                        </a>
+
+                    </li>
+
+
+                </ul>
+            </nav>
+        </header>
+    </div>
+</div>
+
+<div class="page-container cd-main-content" id="PageContainer">
+
+    <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+        <!-- BEGIN content_for_index -->
+        <div id="shopify-section-8cb6f42a-9459-4551-9d21-a323c799b66f"
+            class="shopify-section index-section index-section--flush index-section--slideshow">
+            <div data-section-id="8cb6f42a-9459-4551-9d21-a323c799b66f" data-section-type="slideshow-section">
+                <div id="SlideshowWrapper-8cb6f42a-9459-4551-9d21-a323c799b66f" class="slideshow-wrapper" role="region"
+                    aria-label="slideshow" aria-describedby="slideshow-info" tabindex="-1">
+                    <div class="slideshow slideshow--adapt" id="Slideshow-8cb6f42a-9459-4551-9d21-a323c799b66f"
+                        data-autorotate="true" data-speed="2000" data-adapt-height="true"
+                        data-slide-nav-a11y="Load slide [slide_number]" data-min-aspect-ratio="2.625207296849088"
+                        style="height:38.092229943145924vw">
+                        <div class="slideshow__slide slideshow__slide--8cb6f42a-9459-4551-9d21-a323c799b66f-image-1">
+
+                            <div class="slideshow__image box ratio-container lazyload js hidden-xs" data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-1_d6d52b8a-93c1-4141-b9bd-7243ff110432_180x.jpg?v=1706529998 180w 69h,
+    
+                  data-sizes=" auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-1_d6d52b8a-93c1-4141-b9bd-7243ff110432_300x300.jpg?v=1706529998');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload js visible-xs" data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-1_3085e762-3bdf-429a-879b-44685dcf1d0f_180x.jpg?v=1706530003 180w 295h,
+        //www.zudio.com/cdn/shop/files/MASTHEAD-1_3085e762-3bdf-429a-879b-44685dcf1d0f.jpg?v=1706530003 360w 590h"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-1_d6d52b8a-93c1-4141-b9bd-7243ff110432_300x300.jpg?v=1706529998');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+
+
+                            <noscript>
+                                <div class="slideshow__image"
+                                    style="background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-1_d6d52b8a-93c1-4141-b9bd-7243ff110432_2048x.jpg?v=1706529998'); background-position: center center;">
+
+                                </div>
+                            </noscript>
+
+                            <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                                <div
+                                    class="slideshow__text-content slideshow__text-content--vertical-center text-center">
+                                    <div class="page-width">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideshow__slide slideshow__slide--8cb6f42a-9459-4551-9d21-a323c799b66f-image-2">
+
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js hidden-xs"
+                                data-parent-fit="contain"
+                                style="background-position: 
+                          background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_300x300.jpg?v=1701860545');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js visible-xs"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_300x300.jpg?v=1701860545');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+
+
+                            <noscript>
+                                <div class="slideshow__image"
+                                    style="background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_2048x.jpg?v=1701860545'); background-position: center center;">
+
+                                </div>
+                            </noscript>
+
+                            <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                                <div
+                                    class="slideshow__text-content slideshow__text-content--vertical-center text-center">
+                                    <div class="page-width">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideshow__slide slideshow__slide--3d0c512e-bfaa-431c-9017-631be7af1194">
+
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js hidden-xs"
+                                data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-2_69cd50c6-690c-4e0c-a96f-5b242c3bdbba_180x.jpg?v=1706530020 180w 69h,
+    
+                  data-sizes=" auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-2_69cd50c6-690c-4e0c-a96f-5b242c3bdbba_300x300.jpg?v=1706530020');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js visible-xs"
+                                data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-2_a54ef0aa-2cee-487a-81c7-a3136527ade0_180x.jpg?v=1706530015 180w 295h,
+        //www.zudio.com/cdn/shop/files/MASTHEAD-2_a54ef0aa-2cee-487a-81c7-a3136527ade0.jpg?v=1706530015 360w 590h"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-2_69cd50c6-690c-4e0c-a96f-5b242c3bdbba_300x300.jpg?v=1706530020');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+
+
+                            <noscript>
+                                <div class="slideshow__image"
+                                    style="background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-2_69cd50c6-690c-4e0c-a96f-5b242c3bdbba_2048x.jpg?v=1706530020'); background-position: center center;">
+
+                                </div>
+                            </noscript>
+
+                            <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                                <div
+                                    class="slideshow__text-content slideshow__text-content--vertical-center text-center">
+                                    <div class="page-width">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideshow__slide slideshow__slide--f0cda0de-45cd-4d1a-ad77-cbce97b7b509">
+
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js hidden-xs"
+                                data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-3_f3e5ea21-b21d-4aca-b748-9b74fd3d7177_180x.jpg?v=1706530032 180w 69h,
+   
+                  data-sizes=" auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-3_f3e5ea21-b21d-4aca-b748-9b74fd3d7177_300x300.jpg?v=1706530032');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js visible-xs"
+                                data-bgset="//www.zudio.com/cdn/shop/files/MASTHEAD-3_a864678c-8b38-4681-a327-cbe3e378b61d_180x.jpg?v=1706530037 180w 295h,
+        //www.zudio.com/cdn/shop/files/MASTHEAD-5_cd58986c-f6e6-4c9f-9263-3c6e595d39aa.jpg?v=1706530082 360w 590h"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-5_d9e76a6b-2ff2-4afa-96d8-30f892846f18_300x300.jpg?v=1706530075');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <noscript>
+                                <div class="slideshow__image"
+                                    style="background-image: url('//www.zudio.com/cdn/shop/files/MASTHEAD-5_d9e76a6b-2ff2-4afa-96d8-30f892846f18_2048x.jpg?v=1706530075'); background-position: center center;">
+                                </div>
+                            </noscript>
+                            <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                                <div
+                                    class="slideshow__text-content slideshow__text-content--vertical-center text-center">
+                                    <div class="page-width">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideshow__slide slideshow__slide--b3658360-a63f-4cc5-8375-f0c9f025be8f">
+
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js hidden-xs"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_300x300.jpg?v=1701860545');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js visible-xs"
+                                data-bgset="//www.zudio.com/cdn/shop/files/App_Banner_4_180x.jpg?v=1701861346 180w 291h,
+    
+    
+    //www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01.jpg?v=1701860545 6597w 2514h" data-sizes="auto"
+                                data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_300x300.jpg?v=1701860545');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+                            <div class="slideshow__image box ratio-container lazyload lazypreload js visible-xs"
+                                data-sizes="auto" data-parent-fit="contain"
+                                style="background-position: ;
+                          background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_300x300.jpg?v=1701860545');">
+                                <div class="slideshow__overlay"></div>
+                            </div>
+
+
+                            <noscript>
+                                <div class="slideshow__image"
+                                    style="background-image: url('//www.zudio.com/cdn/shop/files/Imp_Notice_06th_Dec_Web_Banner-01_2048x.jpg?v=1701860545'); background-position: center center;">
+
+                                </div>
+                            </noscript>
+
+                            <div class="slideshow__text-wrap slideshow__text-wrap--desktop">
+                                <div
+                                    class="slideshow__text-content slideshow__text-content--vertical-center text-center">
+                                    <div class="page-width">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideshow__controls">
+                        <div class="slideshow__arrows" style="width:313px">
+                            <button class="slideshow__arrow slideshow__arrow-left" aria-label="Previous slide"><svg
+                                    aria-hidden="true" focusable="false" role="presentation"
+                                    class="icon icon-chevron-left">
+                                    <path
+                                        d="M5.5.037a1.5 1.5 0 0 1 1.06 2.56l-2.94 2.94 2.94 2.94a1.5 1.5 0 0 1-2.12 2.12l-4-4a1.5 1.5 0 0 1 0-2.12l4-4A1.5 1.5 0 0 1 5.5.037z"
+                                        fill="#fff" class="layer" />
+                                </svg></button>
+                            <button class="slideshow__arrow slideshow__arrow-right" aria-label="Next slide"><svg
+                                    aria-hidden="true" focusable="false" role="presentation"
+                                    class="icon icon-chevron-right" viewBox="0 0 7 11">
+                                    <path fill="#fff" />
+                                </svg></button>
+                        </div><button type="button" class="slideshow__pause"
+                            data-id="8cb6f42a-9459-4551-9d21-a323c799b66f" aria-live="polite" aria-pressed="false">
+                            <span class="slideshow__pause-stop">
+                                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-pause"
+                                    viewBox="0 0 9.52 11">
+                                    <path fill="#fff" />
+                                </svg>
+                                <span class="icon__fallback-text">Pause slideshow</span>
+                            </span>
+                            <span class="slideshow__pause-rotate">
+                                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play"
+                                    viewBox="0 0 20 40">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M23.6 16.8L7 1.5C5.6.3 4 .2 2.9.7 1.6 1.4.8 2.7.7 3.8v31.7c0 1.8 1.1 3.3 3.1 3.3 1.5 0 2.5-.5 3.4-1.4l16.4-15.7c1.5-1.4 1.5-3.6 0-4.9z" />
+                                </svg>
+                                <span class="icon__fallback-text">Play slideshow</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="slideshow__text-wrap slideshow__text-wrap--mobile">
+
+                    <div class="slideshow__arrows slideshow__arrows--mobile">
+                        <button class="slideshow__arrow slideshow__arrow-left" aria-label="Previous slide"><svg
+                                aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left"
+                                viewBox="0 0 7 11">
+                                <path
+                                    d="M5.5.037a1.5 1.5 0 0 1 1.06 2.56l-2.94 2.94 2.94 2.94a1.5 1.5 0 0 1-2.12 2.12l-4-4a1.5 1.5 0 0 1 0-2.12l4-4A1.5 1.5 0 0 1 5.5.037z"
+                                    fill="#fff" class="layer" />
+                            </svg></button>
+                        <button class="slideshow__arrow slideshow__arrow-right" aria-label="Next slide"><svg
+                                aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right"
+                                viewBox="0 0 7 11">
+                                <path
+                                    d="M1.5 11A1.5 1.5 0 0 1 .44 8.44L3.38 5.5.44 2.56A1.5 1.5 0 0 1 2.56.44l4 4a1.5 1.5 0 0 1 0 2.12l-4 4A1.5 1.5 0 0 1 1.5 11z"
+                                    fill="#fff" />
+                            </svg></button>
+                    </div>
+
+                </div>
+                <div class="slider-navigation">
+                    <ul>
+
+                        <li>
+                            <a href="/collections/beauty">Beauty</a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/women">Women</a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/men">Men</a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/ethnic">Ethnic</a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/kids">Kids</a>
+                        </li>
+
+                        <li>
+                            <a href="/collections/footwear">Footwear</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+
+        </div><!-- END content_for_index -->
+
+    </main>
+
+    <div id="shopify-section-footer" class="shopify-section">
+
+        <style>
+            .site-footer__hr {
+                border-bottom: 1px solid #000000;
+            }
+
+            .site-footer p,
+            .site-footer h4,
+            .site-footer small {
+                color: #fff4f4;
+            }
+
+            .site-footer {
+                background-color: #000000;
+            }
+        </style>
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="page-width">
+
+            </div>
+
+
+
+            <div class="page-width">
+                <div class="grid grid--no-gutters small--text-center">
+                    <div class="grid__item one-half small--one-whole">
+                        <div class="small--hide">
+                            <small class="site-footer__copyright-content">Copyright &copy; 2024 <a href="/"
+                                    title="">Zudio</a></small>
+                            <br>
+                            <small class="site-footer__copyright-content"><span>Don’t miss out on the latest in
+                                    fashion.</span> <img
+                                    src="https://cdn.shopify.com/s/files/1/0249/4155/9894/files/icons8-instagram-20_1.png?v=1692868821"
+                                    alt="instagram-icon" style="position: relative;bottom: -4px;"> <span>Follow us
+                                    @myzudio</span></small>
+                        </div>
+                    </div>
+                    <div class="grid__item one-half small--one-whole">
+                    </div>
+                    <div class="grid__item medium-up--hide">
+                        <small class="site-footer__copyright-content">Copyright &copy; 2024, <a href="/"
+                                title="">Zudio</a></small>
+                        <br>
+                        <small class="site-footer__copyright-content">Don’t miss out on the latest in fashion. <img
+                                src="https://cdn.shopify.com/s/files/1/0249/4155/9894/files/icons8-instagram-20_1.png?v=1692868821"
+                                alt="instagram-icon" style="position: relative;bottom: -4px;"> Follow us
+                            @myzudio</small>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contact__us">
+                <a href="mailto: Zudiohelp@trent-tata.com">Contact us- Zudiohelp@trent-tata.com </a>
+            </div>
+        </footer>
+
+        <style>
+            .contact__us {
+                position: absolute;
+                right: 42px;
+                bottom: 13px;
+            }
+
+            @media (max-width:786px) {
+                .contact__us {
+                    position: unset;
+                    text-align: center;
+                   
+                }
+
+                div#shopify-section-footer .grid__item.medium-up--hide {
+                    padding-top: 18px;
+                }
+            }
+
+            @media (max-width: 390px) {
+                .contact__us {
+                    right: 52px !important;
+                    bottom: 24px !important;
+                }
+
+                .site-footer {
+                    padding: 5px 0;
+                }
+        </style>
+
+
+
+
+    </div>
+
+
+    <div id="slideshow-info" class="visually-hidden" aria-hidden="true">Use left/right arrows to navigate the slideshow
+        or swipe left/right if using a mobile device</div>
+
+</div>
+
+<div class="cd-overlay"></div>
